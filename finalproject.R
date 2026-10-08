@@ -1,0 +1,119 @@
+perf=read.csv("StudentPerformanceFactors.csv")
+View(perf)
+# Unit 1
+model=lm(Exam_Score~.,data=perf)
+summary(model)
+# Unit 2
+none=lm(Exam_Score~1,data=perf)
+summary(none)
+add1(none,scope=~Hours_Studied+Attendance+Parental_Involvement+Access_to_Resources+
+       Extracurricular_Activities+Sleep_Hours+Previous_Scores+Motivation_Level+Internet_Access+
+       Tutoring_Sessions+Family_Income+Teacher_Quality+School_Type+Peer_Influence+Physical_Activity+
+       Learning_Disabilities+Parental_Education_Level+Distance_from_Home+Gender,data=perf)
+current=update(none,.~.+Attendance,data=perf)
+add1(current,scope=~Hours_Studied+Attendance+Parental_Involvement+Access_to_Resources+
+       Extracurricular_Activities+Sleep_Hours+Previous_Scores+Motivation_Level+Internet_Access+
+       Tutoring_Sessions+Family_Income+Teacher_Quality+School_Type+Peer_Influence+Physical_Activity+
+       Learning_Disabilities+Parental_Education_Level+Distance_from_Home+Gender,data=perf)
+current=update(current,.~.+Hours_Studied,data=perf)
+add1(current,scope=~Hours_Studied+Attendance+Parental_Involvement+Access_to_Resources+
+       Extracurricular_Activities+Sleep_Hours+Previous_Scores+Motivation_Level+Internet_Access+
+       Tutoring_Sessions+Family_Income+Teacher_Quality+School_Type+Peer_Influence+Physical_Activity+
+       Learning_Disabilities+Parental_Education_Level+Distance_from_Home+Gender,data=perf)
+current=update(current,.~.+Access_to_Resources,data=perf)
+add1(current,scope=~Hours_Studied+Attendance+Parental_Involvement+Access_to_Resources+
+       Extracurricular_Activities+Sleep_Hours+Previous_Scores+Motivation_Level+Internet_Access+
+       Tutoring_Sessions+Family_Income+Teacher_Quality+School_Type+Peer_Influence+Physical_Activity+
+       Learning_Disabilities+Parental_Education_Level+Distance_from_Home+Gender,data=perf)
+current=update(current,.~.+Parental_Involvement,data=perf)
+add1(current,scope=~Hours_Studied+Attendance+Parental_Involvement+Access_to_Resources+
+       Extracurricular_Activities+Sleep_Hours+Previous_Scores+Motivation_Level+Internet_Access+
+       Tutoring_Sessions+Family_Income+Teacher_Quality+School_Type+Peer_Influence+Physical_Activity+
+       Learning_Disabilities+Parental_Education_Level+Distance_from_Home+Gender,data=perf)
+current=update(current,.~.+Previous_Scores,data=perf)
+add1(current,scope=~Hours_Studied+Attendance+Parental_Involvement+Access_to_Resources+
+       Extracurricular_Activities+Sleep_Hours+Previous_Scores+Motivation_Level+Internet_Access+
+       Tutoring_Sessions+Family_Income+Teacher_Quality+School_Type+Peer_Influence+Physical_Activity+
+       Learning_Disabilities+Parental_Education_Level+Distance_from_Home+Gender,data=perf)
+current=update(current,.~.+Tutoring_Sessions,data=perf)
+add1(current,scope=~Hours_Studied+Attendance+Parental_Involvement+Access_to_Resources+
+       Extracurricular_Activities+Sleep_Hours+Previous_Scores+Motivation_Level+Internet_Access+
+       Tutoring_Sessions+Family_Income+Teacher_Quality+School_Type+Peer_Influence+Physical_Activity+
+       Learning_Disabilities+Parental_Education_Level+Distance_from_Home+Gender,data=perf)
+current=update(current,.~.+Family_Income,data=perf)
+add1(current,scope=~Hours_Studied+Attendance+Parental_Involvement+Access_to_Resources+
+       Extracurricular_Activities+Sleep_Hours+Previous_Scores+Motivation_Level+Internet_Access+
+       Tutoring_Sessions+Family_Income+Teacher_Quality+School_Type+Peer_Influence+Physical_Activity+
+       Learning_Disabilities+Parental_Education_Level+Distance_from_Home+Gender,data=perf)
+current=update(current,.~.+Peer_Influence,data=perf)
+add1(current,scope=~Hours_Studied+Attendance+Parental_Involvement+Access_to_Resources+
+       Extracurricular_Activities+Sleep_Hours+Previous_Scores+Motivation_Level+Internet_Access+
+       Tutoring_Sessions+Family_Income+Teacher_Quality+School_Type+Peer_Influence+Physical_Activity+
+       Learning_Disabilities+Parental_Education_Level+Distance_from_Home+Gender,data=perf)
+current=update(current,.~.+Parental_Education_Level,data=perf)
+add1(current,scope=~Hours_Studied+Attendance+Parental_Involvement+Access_to_Resources+
+       Extracurricular_Activities+Sleep_Hours+Previous_Scores+Motivation_Level+Internet_Access+
+       Tutoring_Sessions+Family_Income+Teacher_Quality+School_Type+Peer_Influence+Physical_Activity+
+       Learning_Disabilities+Parental_Education_Level+Distance_from_Home+Gender,data=perf)
+current=update(current,.~.+Motivation_Level,data=perf)
+add1(current,scope=~Hours_Studied+Attendance+Parental_Involvement+Access_to_Resources+
+       Extracurricular_Activities+Sleep_Hours+Previous_Scores+Motivation_Level+Internet_Access+
+       Tutoring_Sessions+Family_Income+Teacher_Quality+School_Type+Peer_Influence+Physical_Activity+
+       Learning_Disabilities+Parental_Education_Level+Distance_from_Home+Gender,data=perf)
+current=update(current,.~.+Teacher_Quality,data=perf)
+add1(current,scope=~Hours_Studied+Attendance+Parental_Involvement+Access_to_Resources+
+       Extracurricular_Activities+Sleep_Hours+Previous_Scores+Motivation_Level+Internet_Access+
+       Tutoring_Sessions+Family_Income+Teacher_Quality+School_Type+Peer_Influence+Physical_Activity+
+       Learning_Disabilities+Parental_Education_Level+Distance_from_Home+Gender,data=perf)
+current=update(current,.~.+Extracurricular_Activities,data=perf)
+add1(current,scope=~Hours_Studied+Attendance+Parental_Involvement+Access_to_Resources+
+       Extracurricular_Activities+Sleep_Hours+Previous_Scores+Motivation_Level+Internet_Access+
+       Tutoring_Sessions+Family_Income+Teacher_Quality+School_Type+Peer_Influence+Physical_Activity+
+       Learning_Disabilities+Parental_Education_Level+Distance_from_Home+Gender,data=perf)
+current=update(current,.~.+Learning_Disabilities,data=perf)
+add1(current,scope=~Hours_Studied+Attendance+Parental_Involvement+Access_to_Resources+
+       Extracurricular_Activities+Sleep_Hours+Previous_Scores+Motivation_Level+Internet_Access+
+       Tutoring_Sessions+Family_Income+Teacher_Quality+School_Type+Peer_Influence+Physical_Activity+
+       Learning_Disabilities+Parental_Education_Level+Distance_from_Home+Gender,data=perf)
+current=update(current,.~.+Distance_from_Home,data=perf)
+add1(current,scope=~Hours_Studied+Attendance+Parental_Involvement+Access_to_Resources+
+       Extracurricular_Activities+Sleep_Hours+Previous_Scores+Motivation_Level+Internet_Access+
+       Tutoring_Sessions+Family_Income+Teacher_Quality+School_Type+Peer_Influence+Physical_Activity+
+       Learning_Disabilities+Parental_Education_Level+Distance_from_Home+Gender,data=perf)
+current=update(current,.~.+Internet_Access,data=perf)
+add1(current,scope=~Hours_Studied+Attendance+Parental_Involvement+Access_to_Resources+
+       Extracurricular_Activities+Sleep_Hours+Previous_Scores+Motivation_Level+Internet_Access+
+       Tutoring_Sessions+Family_Income+Teacher_Quality+School_Type+Peer_Influence+Physical_Activity+
+       Learning_Disabilities+Parental_Education_Level+Distance_from_Home+Gender,data=perf)
+current=update(current,.~.+Physical_Activity,data=perf)
+add1(current,scope=~Hours_Studied+Attendance+Parental_Involvement+Access_to_Resources+
+       Extracurricular_Activities+Sleep_Hours+Previous_Scores+Motivation_Level+Internet_Access+
+       Tutoring_Sessions+Family_Income+Teacher_Quality+School_Type+Peer_Influence+Physical_Activity+
+       Learning_Disabilities+Parental_Education_Level+Distance_from_Home+Gender,data=perf)
+add1(current,scope=~.^2)
+current=current=update(current,.~.+Learning_Disabilities:Physical_Activity,data=perf)
+summary(current)
+summary(model)
+# Unit 6
+install.packages("gplots")
+library(gplots)
+plotmeans(Exam_Score~Access_to_Resources,data=perf)
+score.anova=aov(Exam_Score~Access_to_Resources,data=perf)
+summary(score.anova)
+score.anovca=aov(Exam_Score~Access_to_Resources+Attendance,data=perf)
+summary(score.anovca)
+anova(score.anova,score.anovca)
+library(ggplot2)
+ggplot(perf, aes(Attendance,Exam_Score,color=Access_to_Resources)) +
+  geom_point() +
+  geom_smooth(method = lm, se = FALSE)
+# Final comparisons
+AIC(model)
+BIC(model)
+AIC(current, score.anovca)
+BIC(current, score.anovca)
+summary(current)$adj.r.squared
+score.anovca=lm(Exam_Score~Access_to_Resources+Attendance,data=perf)
+summary(score.anovca)$adj.r.squared
+sqrt(mean(current$residuals^2))
+sqrt(mean(score.anovca$residuals^2))
